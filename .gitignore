@@ -1,0 +1,15 @@
+# Local files
+.env
+postgresql_data/
+
+# File system caches
+.DS_Store
+._*
+
+# IDE system files
+/.idea/
+/.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]

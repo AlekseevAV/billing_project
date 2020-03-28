@@ -8,14 +8,14 @@ class ExchangeService:
     exchange_rates = {
         # (from, to): rate
         # USD
-        (constants.USD, constants.CNY): 0.1,  # USD -> CNY
-        (constants.USD, constants.EUR): 0.2,  # USD -> EUR
+        (constants.USD, constants.CNY): Decimal(1.),  # USD -> CNY
+        (constants.USD, constants.EUR): Decimal(1.),  # USD -> EUR
         # CNY
-        (constants.CNY, constants.USD): 0.3,  # CNY -> USD
-        (constants.CNY, constants.EUR): 0.4,  # CNY -> EUR
+        (constants.CNY, constants.USD): Decimal(1.),  # CNY -> USD
+        (constants.CNY, constants.EUR): Decimal(1.),  # CNY -> EUR
         # EUR
-        (constants.EUR, constants.USD): 0.5,  # EUR -> USD
-        (constants.EUR, constants.CNY): 0.6,  # EUR -> CNY
+        (constants.EUR, constants.USD): Decimal(1.),  # EUR -> USD
+        (constants.EUR, constants.CNY): Decimal(1.),  # EUR -> CNY
     }
 
     @classmethod

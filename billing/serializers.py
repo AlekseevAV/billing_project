@@ -3,13 +3,19 @@ from rest_framework import serializers
 from .models import Account, Transaction
 
 
-class AccountSerializer(serializers.ModelField):
+class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = '__all__'
 
 
-class TransactionSerializer(serializers.ModelField):
+class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = '__all__'
+
+
+class TransactionCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Transaction
+        fields = ('from_account', 'to_account', 'amount')

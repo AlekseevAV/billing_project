@@ -1,9 +1,11 @@
-from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-from .views import UserAccountsView, AccountTransactionsView
+from .views import AccountsView, TransactionsView
 
 
-urlpatterns = [
-    path('accounts/', UserAccountsView.as_view()),
-    path('accounts/<int:account_id>/transactions', AccountTransactionsView.as_view()),
-]
+router = DefaultRouter()
+router.register(r'accounts', AccountsView, basename='accounts')
+router.register(r'transactions', TransactionsView, basename='transactions')
+
+
+urlpatterns = router.urls

@@ -45,6 +45,8 @@ class TransactionCreateService:
             raise TransactionCreateError('Amount should be grater then 0')
         if self.from_account.amount < self.amount:
             raise TransactionCreateError(f'Not enough amount in account {self.from_account}')
+        if self.from_account == self.to_account:
+            raise TransactionCreateError(f'Transaction to same account not allowed')
 
     def proceed_accounts(self) -> None:
         # subtract amount from from_account

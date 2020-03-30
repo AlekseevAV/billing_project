@@ -135,6 +135,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Application settings
+ADMINS = [('admin', 'admin@admin.admin')]
+
 TRANSFER_COMMISSION_RATE = Decimal(os.getenv('DJANGO_TRANSFER_COMMISSION_RATE', 0.1))
 
 REST_FRAMEWORK = {

@@ -13,11 +13,19 @@ services:
       - db
     volumes:
       - .:/app/
+    environment:
+      DJANGO_DB_NAME: billing_project
+      DJANGO_DB_USER: postgres
+      DJANGO_DB_HOST: db
+      DJANGO_DB_PASSWORD: test_pass
+      DEMO:
+      DJANGO_DEBUG:
 
   db:
     image: postgres:12
     environment:
       POSTGRES_DB: billing_project
+      POSTGRES_PASSWORD: test_pass
     volumes:
-      - postgresql_data:/var/lib/postgresql/data
+      - ./postgresql_data:/var/lib/postgresql/data
     restart: always

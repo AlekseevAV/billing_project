@@ -9,6 +9,11 @@ done
 echo "PostgreSQL started"
 
 python manage.py migrate
-python manage.py collectstatic --no-input --clear
+
+# Create admin users for demo start
+if test -n "$DEMO"
+then
+  python manage.py initadmin
+fi
 
 exec "$@"

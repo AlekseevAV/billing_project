@@ -34,5 +34,6 @@ RUN set -ex \
 COPY . /app
 
 EXPOSE 8000
+ENTRYPOINT ["./docker-entrypoint.sh"]
 
 CMD ["gunicorn", "-w", "3", "--bind", ":8000", "project.wsgi:application"]

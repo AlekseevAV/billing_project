@@ -7,6 +7,7 @@ from billing.models import Account
 User = get_user_model()
 
 
+# TODO: tests
 class AccountCreateService:
     @classmethod
     def execute(cls, user: User, currency: str, amount: Decimal) -> Account:

@@ -17,15 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 
 api_v1 = [
-    path('authentication/', include(('authentication.urls', 'authentication'))),
-    path('billing/', include(('billing.urls', 'billing'))),
+    path('authentication/', include(('authentication.urls', 'authentication'), namespace='authentication')),
+    path('billing/', include(('billing.urls', 'billing'), namespace='billing')),
 ]
 
 api = [
-    path('v1/', include((api_v1, 'api_v1')))
+    path('v1/', include((api_v1, 'v1'), namespace='v1'))
 ]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(api)),
+    path('api/', include((api, 'api'), namespace='api')),
 ]

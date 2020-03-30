@@ -36,4 +36,5 @@ class UserRegistrationService:
     @classmethod
     def create_accounts(cls, user: User):
         for currency, amount in cls.pre_created_accounts_for_new_users.items():
+            # TODO: Create transaction for accounts with amounts
             cls.account_create_service.execute(user=user, currency=currency, amount=amount)

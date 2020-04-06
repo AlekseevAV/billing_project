@@ -23,4 +23,4 @@ class TransactionFactory(factory.django.DjangoModelFactory):
     from_account = factory.SubFactory(AccountFactory)
     to_account = factory.SubFactory(AccountFactory)
     amount = Decimal(100.)
-    currency = constants.USD
+    commission = Decimal(0)

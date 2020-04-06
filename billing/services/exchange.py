@@ -3,7 +3,6 @@ from decimal import Decimal
 from billing import constants
 
 
-# TODO: tests
 class ExchangeService:
     # TODO: Where to store exchange rates?
     exchange_rates = {

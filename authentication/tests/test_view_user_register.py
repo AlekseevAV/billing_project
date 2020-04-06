@@ -4,11 +4,8 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
 
-from ..views import UserRegisterAPIView
-
 
 class UserRegisterAPIViewTestCase(TestCase):
-    user_register_view = UserRegisterAPIView
     view_name = 'api:v1:authentication:registration'
 
     @classmethod

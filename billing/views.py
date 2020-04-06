@@ -17,6 +17,7 @@ class AccountsView(ReadOnlyModelViewSet):
     transactions_queryset = Transaction.objects.all()
     transactions_filter_backends = [DjangoFilterBackend, OrderingFilter]
     transactions_serializer_class = TransactionSerializer
+    filterset_fields = ordering_fields = '__all__'
 
     def get_queryset(self):
         queryset = super().get_queryset()

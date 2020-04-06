@@ -11,7 +11,6 @@ from ..models import Account, Transaction
 User = get_user_model()
 
 
-# TODO: tests
 class TransactionCreateService:
     exchange_service = ExchangeService
     # TODO: How to store commission rate?
@@ -47,7 +46,7 @@ class TransactionCreateService:
         if self.from_account.amount < self.amount:
             raise TransactionCreateError(f'Not enough amount in account {self.from_account}')
         if self.from_account == self.to_account:
-            raise TransactionCreateError(f'Transaction to same account not allowed')
+            raise TransactionCreateError('Transaction to same account not allowed')
 
     def proceed_accounts(self) -> None:
         # subtract amount from from_account

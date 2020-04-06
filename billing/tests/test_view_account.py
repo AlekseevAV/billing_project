@@ -170,3 +170,7 @@ class AccountsViewTestCase(TestCase):
     def test_transaction_list_view_filtering(self):
         # TODO: add tests
         self.skipTest('TODO')
+
+    def test_list_view_pagination(self):
+        # TODO: add tests
+        self.skipTest('TODO')
